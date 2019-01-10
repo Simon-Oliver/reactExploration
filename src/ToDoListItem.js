@@ -6,7 +6,7 @@ class ToDoListItem extends React.Component {
     ...this.props.item
   };
 
-  handleInputChange = e => {
+  handleInputChange = () => {
     const { completed } = this.state;
     this.setState({ completed: !completed });
   };
@@ -16,7 +16,7 @@ class ToDoListItem extends React.Component {
     return (
       <div className="itemContainer">
         <input
-          name="todoItem"
+          name="inputItem"
           type="checkbox"
           checked={completed}
           onChange={this.handleInputChange}
