@@ -5,12 +5,25 @@ import todos from './dummydata';
 
 class ToDoList extends React.Component {
   state = {
-    todos
+    todos,
+    newTodo: ''
+  };
+
+  handleInputChange = id => {
+    const updatedTodoList = this.state.todos;
+    updatedTodoList.forEach(e => {
+      if (e.id === id) {
+        e.completed = !e.completed;
+      }
+    });
+    this.setState({ todos: updatedTodoList });
   };
 
   updateTodo = event => {
     event.preventDefault();
-    console.log(this.state.todos);
+
+    this.setState(prevState => ({ todos: prevState.todos.concat(this.state.newTodo) }));
+    this.setState(() => ({ newTodo: '' }));
   };
 
   handleInput = e => {
@@ -20,8 +33,7 @@ class ToDoList extends React.Component {
       completed: false
     };
 
-    this.setState({ items: this.state.todos.push(newItem) });
-    console.log(e.target.value);
+    this.setState(() => ({ newTodo: newItem }));
   };
 
   render() {
@@ -32,8 +44,14 @@ class ToDoList extends React.Component {
           <input onChange={this.handleInput} placeholder="Task" />
           <button type="submit"> Add Task </button>
         </form>
-        {todos.map(todo => (
-          <ToDoListItem item={todo} key={todo.id} />
+        {this.state.todos.map(todo => (
+          <ToDoListItem
+            id={todo.id}
+            key={todo.id}
+            completed={todo.completed}
+            title={todo.title}
+            handleInputChange={this.handleInputChange}
+          />
         ))}
       </div>
     );
