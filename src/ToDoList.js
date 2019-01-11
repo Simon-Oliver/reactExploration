@@ -6,7 +6,8 @@ import todos from './dummydata';
 class ToDoList extends React.Component {
   state = {
     todos,
-    newTodo: ''
+    newTodo: '',
+    error: ''
   };
 
   handleInputChange = id => {
@@ -21,19 +22,34 @@ class ToDoList extends React.Component {
 
   updateTodo = event => {
     event.preventDefault();
-
-    this.setState(prevState => ({ todos: prevState.todos.concat(this.state.newTodo) }));
-    this.setState(() => ({ newTodo: '' }));
-  };
-
-  handleInput = e => {
     const newItem = {
       id: uniqid(),
-      title: e.target.value,
+      title: this.state.newTodo,
       completed: false
     };
 
-    this.setState(() => ({ newTodo: newItem }));
+    if (event.target.elements.option.value) {
+      this.setState(prevState => ({ todos: prevState.todos.concat(newItem) }));
+      this.setState(() => ({ newTodo: '', error: '' }));
+      event.target.elements.option.value = '';
+    } else {
+      this.setState(() => ({ error: 'Please enter a valid ToDo item!' }));
+    }
+  };
+
+  handleInput = e => {
+    const newValue = e.target.value.trim();
+    this.setState(() => ({ newTodo: newValue }));
+  };
+
+  handleDelete = id => {
+    this.setState(prevState => ({ todos: prevState.todos.filter(e => e.id !== id) }));
+  };
+
+  removeCompleted = () => {
+    this.setState(prevState => ({
+      todos: prevState.todos.filter(e => e.completed !== true)
+    }));
   };
 
   render() {
@@ -41,18 +57,27 @@ class ToDoList extends React.Component {
       <div>
         <h1>ToDo Overview</h1>
         <form onSubmit={this.updateTodo}>
-          <input onChange={this.handleInput} placeholder="Task" />
-          <button type="submit"> Add Task </button>
+          <input name="option" onChange={this.handleInput} placeholder="Task" />
+          <button type="submit">Add Task</button>
+          <button type="button" onClick={this.removeCompleted}>
+            Remove Completed
+          </button>
         </form>
-        {this.state.todos.map(todo => (
-          <ToDoListItem
-            id={todo.id}
-            key={todo.id}
-            completed={todo.completed}
-            title={todo.title}
-            handleInputChange={this.handleInputChange}
-          />
-        ))}
+        {this.state.error && <p>{this.state.error}</p>}
+        {this.state.todos.length > 0 ? (
+          this.state.todos.map(todo => (
+            <ToDoListItem
+              id={todo.id}
+              key={todo.id}
+              completed={todo.completed}
+              title={todo.title}
+              handleInputChange={this.handleInputChange}
+              handleDelete={this.handleDelete}
+            />
+          ))
+        ) : (
+          <p>Please enter an Item to get started</p>
+        )}
       </div>
     );
   }
