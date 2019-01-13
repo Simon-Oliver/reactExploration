@@ -56,12 +56,21 @@ class ToDoList extends React.Component {
     return (
       <div>
         <h1>ToDo Overview</h1>
-        <form onSubmit={this.updateTodo}>
-          <input name="option" onChange={this.handleInput} placeholder="Task" />
-          <button type="submit">Add Task</button>
-          <button type="button" onClick={this.removeCompleted}>
-            Remove Completed
-          </button>
+        <form className="addTodo" onSubmit={this.updateTodo}>
+          <input
+            className="todoInput"
+            name="option"
+            onChange={this.handleInput}
+            placeholder="Task"
+          />
+          <div className="btn-box">
+            <button className="addTaskBtn" type="submit">
+              Add Task
+            </button>
+            <button type="button" onClick={this.removeCompleted}>
+              Remove Completed
+            </button>
+          </div>
         </form>
         {this.state.error && <p>{this.state.error}</p>}
         {this.state.todos.length > 0 ? (

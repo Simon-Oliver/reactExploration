@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const ToDoListItem = ({ title, id, handleInputChange, completed, handleDelete }) => (
   <div className="itemContainer">
@@ -10,8 +12,8 @@ const ToDoListItem = ({ title, id, handleInputChange, completed, handleDelete })
       onChange={() => handleInputChange(id)}
     />
     <h3 key={title}>{title}</h3>
-    <button type="button" onClick={() => handleDelete(id)}>
-      Remove
+    <button className="delete" type="button" onClick={() => handleDelete(id)}>
+      <FontAwesomeIcon icon={faTrash} />
     </button>
   </div>
 );
