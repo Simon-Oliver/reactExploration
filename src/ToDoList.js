@@ -55,7 +55,7 @@ class ToDoList extends React.Component {
   render() {
     return (
       <div>
-        <h1>ToDo Overview</h1>
+        <h1>To Do's</h1>
         <form className="addTodo" onSubmit={this.updateTodo}>
           <input
             className="todoInput"
