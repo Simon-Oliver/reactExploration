@@ -1,25 +1,26 @@
 .sideDrawer {
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 10;
     height: 100vh;
     width: 60vw;
-    background: rgba(56, 56, 56, 0.623);
     align-items: center;
     justify-content: center;
+    background: white;
 }
 
 .sideDrawer ul {
     list-style: none;
     margin: 0;
     padding: 0;
+
 }
 
 .sideDrawer li {
     text-align: center;
     font-size: 1.6rem;
-    color: white;
+
     margin: 1rem 0;
 }
