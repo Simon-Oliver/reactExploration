@@ -1,0 +1,19 @@
+.menuBtn {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 2.5vh;
+    margin-top: -3vh;
+    z-index: 200;
+    width: 6vh;
+    height: 6vh;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.menuBtn .menuLine {
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+}

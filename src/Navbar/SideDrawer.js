@@ -4,9 +4,15 @@ import './SideDrawer.css';
 const SideDrawer = props => (
   <nav className="sideDrawer">
     <ul>
-      <li>Home</li>
-      <li>Portfolio</li>
-      <li>About</li>
+      <li>
+        <a href="#">Home</a>
+      </li>
+      <li>
+        <a href="#">Portfolio</a>
+      </li>
+      <li>
+        <a href="#">About</a>
+      </li>
     </ul>
   </nav>
 );
