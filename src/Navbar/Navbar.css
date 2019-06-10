@@ -1,0 +1,37 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.logo {
+    height: 10vh;
+    width: 10vh;
+}
+
+.mainHeader {
+    display: flex;
+    background: #1f1f1f;
+    height: 10vh;
+    align-items: center;
+    padding: 0 10vh;
+}
+
+.mainHeader ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: white;
+    margin-left: auto;
+}
+
+.mainHeader ul li {
+    margin-left: 1rem;
+}
