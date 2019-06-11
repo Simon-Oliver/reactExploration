@@ -5,7 +5,7 @@ import MenuBtn from './MenuBtn';
 
 const Navbar = props => (
   <nav className="mainHeader">
-    <MenuBtn />
+    <MenuBtn drawerToggleClickHandler={props.drawerToggleClickHandler} />
     <img className="logo" src={logo} alt=" " />
     <ul>
       <li>
