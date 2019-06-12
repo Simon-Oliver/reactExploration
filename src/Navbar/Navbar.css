@@ -11,8 +11,7 @@ html {
 }
 
 .logo {
-    height: 10vh;
-    width: 10vh;
+    height: 8vh;
 }
 
 .mainHeader {
@@ -38,7 +37,8 @@ html {
 }
 
 .mainHeader a {
-    color: #1f1f1f;
+    font-size: 1.2rem;
+    color: white;
     text-decoration: none;
 }
 

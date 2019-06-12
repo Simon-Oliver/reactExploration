@@ -7,7 +7,8 @@ import Backdrop from './Backdrop/Backdrop';
 
 class App extends Component {
   state = {
-    sideDrawerOpen: false
+    sideDrawerOpen: false,
+    windowWith: window.innerWidth
   };
 
   drawerToggleClickHandler = () => {
@@ -18,10 +19,30 @@ class App extends Component {
     this.setState({ sideDrawerOpen: false });
   };
 
+  handleResize = event => {
+    this.setState({ windowWith: window.innerWidth });
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentDidUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  showMenuButton() {
+    return this.state.windowWith < 720;
+  }
+
   render() {
     return (
       <div className="App">
-        <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
+        <Navbar
+          drawerToggleClickHandler={this.drawerToggleClickHandler}
+          showMenuButton={this.showMenuButton()}
+          sideDrawerOpen={this.state.sideDrawerOpen}
+        />
         <CSSTransition
           in={this.state.sideDrawerOpen}
           timeout={200}
