@@ -2,7 +2,7 @@ import React from 'react';
 import './SideDrawer.css';
 
 const SideDrawer = props => (
-  <nav className={`sideDrawer ${props.open ? 'open' : ''}`}>
+  <nav className="sideDrawer">
     <ul>
       <li>
         <a href="#">Home</a>
@@ -18,3 +18,5 @@ const SideDrawer = props => (
 );
 
 export default SideDrawer;
+
+//  ${props.open ? 'open' : ''}

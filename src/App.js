@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { CSSTransition } from 'react-transition-group';
 import Navbar from './Navbar/Navbar';
 import SideDrawer from './Navbar/SideDrawer';
 import Backdrop from './Backdrop/Backdrop';
@@ -21,8 +22,22 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
-        {<SideDrawer open={this.state.sideDrawerOpen} />}
-        {this.state.sideDrawerOpen && <Backdrop backdropClickHandler={this.backdropClickHandler} />}
+        <CSSTransition
+          in={this.state.sideDrawerOpen}
+          timeout={200}
+          classNames="backdrop"
+          unmountOnExit
+        >
+          <Backdrop backdropClickHandler={this.backdropClickHandler} />
+        </CSSTransition>
+        <CSSTransition
+          in={this.state.sideDrawerOpen}
+          timeout={200}
+          classNames="sidedrawer"
+          unmountOnExit
+        >
+          <SideDrawer open={this.state.sideDrawerOpen} />
+        </CSSTransition>
       </div>
     );
   }

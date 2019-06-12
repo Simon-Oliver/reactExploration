@@ -1,8 +1,40 @@
-.backDrop {
+.backdrop-enter {
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     width: 100vw;
     background: rgba(56, 56, 56, 0.623);
+    opacity: 0;
+}
+
+
+.backdrop-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+
+.backdrop-enter-done {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(56, 56, 56, 0.623);
+    opacity: 1;
+}
+
+.backdrop-exit {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(56, 56, 56, 0.623);
+    opacity: 1;
+}
+
+.backdrop-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
 }
