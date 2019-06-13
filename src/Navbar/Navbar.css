@@ -11,16 +11,16 @@ html {
 }
 
 .logo {
-    height: 8vh;
+    height: 80%;
 }
 
 .mainHeader {
     position: relative;
     display: flex;
     background: #1f1f1f;
-    height: 10vh;
+    height: 45px;
     align-items: center;
-    padding: 0 10vh;
+    padding: 0 45px;
 }
 
 .mainHeader ul {
@@ -37,7 +37,7 @@ html {
 }
 
 .mainHeader a {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: white;
     text-decoration: none;
 }
