@@ -13,6 +13,7 @@
 }
 
 .menuBtn div {
+    position: relative;
     transform: rotate(0deg);
     transition: .25s ease-in-out;
     height: 9%;
@@ -33,9 +34,10 @@
     transform-origin: left center;
 }
 
-.menuBtn.open div:nth-child(1) {
-    transform: rotate(45deg);
 
+.menuBtn.open div:nth-child(1) {
+    top: -2%;
+    transform: rotate(45deg)
 }
 
 .menuBtn.open div:nth-child(2) {
@@ -44,5 +46,6 @@
 }
 
 .menuBtn.open div:nth-child(3) {
-    transform: rotate(-45deg);
+    left: 1%;
+    transform: rotate(-45deg)
 }
