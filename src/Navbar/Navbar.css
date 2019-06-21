@@ -11,7 +11,7 @@ html {
 }
 
 .logo {
-    height: 80%;
+    height: 70%;
 }
 
 .mainHeader {
@@ -33,11 +33,11 @@ html {
 }
 
 .mainHeader ul li {
-    margin-left: 1rem;
+    margin-left: 1.8rem;
 }
 
 .mainHeader a {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: white;
     text-decoration: none;
 }
