@@ -36,7 +36,7 @@
 
 
 .menuBtn.open div:nth-child(1) {
-    top: -2%;
+    top: -4%;
     transform: rotate(45deg)
 }
 

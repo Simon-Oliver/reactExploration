@@ -1,0 +1,20 @@
+.footer {
+    padding: 2.4rem;
+    background: #1f1f1f;
+    flex-grow: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer div {
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: darkgrey;
+}
+
+.footer div span {
+    color: white;
+}

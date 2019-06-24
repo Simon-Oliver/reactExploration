@@ -4,6 +4,8 @@ import { CSSTransition } from 'react-transition-group';
 import Navbar from './Navbar/Navbar';
 import SideDrawer from './Navbar/SideDrawer';
 import Backdrop from './Backdrop/Backdrop';
+import Main from './Main/Main';
+import Footer from './Footer/Footer';
 
 class App extends Component {
   state = {
@@ -59,6 +61,8 @@ class App extends Component {
         >
           <SideDrawer open={this.state.sideDrawerOpen} />
         </CSSTransition>
+        <Main />
+        <Footer />
       </div>
     );
   }

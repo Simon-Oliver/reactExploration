@@ -11,3 +11,9 @@ html {
 *:after {
     box-sizing: inherit;
 }
+
+.App {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
