@@ -2,11 +2,12 @@
     background: lavender;
     flex: 1;
     padding: 0 45px;
+    justify-content: center;
 }
 
 .gridContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     height: 30vh
 }
 
@@ -25,4 +26,10 @@ h1 {
 
 .gridThree {
     background: blue;
+}
+
+@media (min-width: 720px) {
+    .gridContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
