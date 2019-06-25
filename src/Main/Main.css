@@ -1,9 +1,28 @@
 .mainContainer {
     background: lavender;
     flex: 1;
+    padding: 0 45px;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 30vh
 }
 
 h1 {
     padding: 0;
     margin: 0;
+}
+
+.gridOne {
+    background: green;
+}
+
+.gridTwo {
+    background: red;
+}
+
+.gridThree {
+    background: blue;
 }
